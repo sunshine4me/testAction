@@ -44,5 +44,5 @@ jobs:
           personal_token: ${{ secrets.TARGET_REPO_TOKEN }}  # 用 PAT
           publish_dir: ./dist
           external_repository: sunshine4me/babylon-demo  # 目标仓库
-          publish_branch: gh-pages                   # 目标分支
+          publish_branch: main                   # 目标分支
           commit_message: "Deploy from CI"
