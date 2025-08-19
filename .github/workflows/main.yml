@@ -41,7 +41,7 @@ jobs:
       - name: Deploy to another repository
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}  # 用 PAT
+          personal_token: ${{ secrets.TARGET_REPO_TOKEN }}  # 用 PAT
           publish_dir: ./dist
           external_repository: sunshine4me/babylon-demo  # 目标仓库
           publish_branch: gh-pages                   # 目标分支
