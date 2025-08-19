@@ -32,8 +32,17 @@ jobs:
         run: npm run build
 
       # 5. 可选：上传构建产物作为 artifact 保留 dist/
-      - name: Deploy to GitHub Pages
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v4
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./dist
+
+      - name: Deploy to another repository
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.TARGET_REPO_TOKEN }}  # 使用 PAT
           publish_dir: ./dist
+          destination_repo: sunshine4me/babylon-demo  # 目标仓库
+          destination_branch: main           # 可选，默认 gh-pages
+          commit_message: "Deploy from CI"
